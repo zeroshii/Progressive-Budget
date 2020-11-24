@@ -65,5 +65,13 @@ function checkDatabase() {
   };
 }
 
+// unregister service workers
+navigator.serviceWorker.getRegistrations()
+.then(function(registrations) {
+  for(let registration of registrations) {
+   registration.unregister()
+ } 
+})
+
 // listen for app coming back online
 window.addEventListener("online", checkDatabase);
