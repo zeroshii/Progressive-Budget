@@ -6,7 +6,7 @@
 This is a Budget Tracker application that allows for offline access and functionality. Users will be able to add expenses and deposits to their budget with or without an online connection. Transactions entered offline will populate the total when brought back online.
 
 The deployed application: [Budget Tracker](https://hidden-shelf-26566.herokuapp.com/)
-[!](https://github.com/zeroshii/Progressive-Budget/blob/main/public/screenshot.png)
+![screenshot](https://github.com/zeroshii/Progressive-Budget/blob/main/public/screenshot.png)
 
 ## Functionality
 
