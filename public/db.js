@@ -2,6 +2,14 @@ let db;
 // create a new db request for a "budget" database.
 const request = indexedDB.open("budget", 1);
 
+// unregister service workers
+navigator.serviceWorker.getRegistrations()
+.then(function(registrations) {
+  for(let registration of registrations) {
+   registration.unregister()
+ } 
+})
+
 request.onupgradeneeded = function(event) {
    // create object store called "pending" and set autoIncrement to true
   const db = event.target.result;
@@ -64,14 +72,6 @@ function checkDatabase() {
     }
   };
 }
-
-// unregister service workers
-navigator.serviceWorker.getRegistrations()
-.then(function(registrations) {
-  for(let registration of registrations) {
-   registration.unregister()
- } 
-})
 
 // listen for app coming back online
 window.addEventListener("online", checkDatabase);
